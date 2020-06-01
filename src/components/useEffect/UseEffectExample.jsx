@@ -24,7 +24,7 @@ export const UseEffectExample = () => {
     return () => {
       window.removeEventListener("mousemove", showMousePosition);
     };
-  }, [show]);
+  }, []);
   return (
     <div>
       <div className="alert">
@@ -33,51 +33,52 @@ export const UseEffectExample = () => {
       </div>
       <div className="alert">
         <button className="btn btn-info" onClick={() => setShow(!show)}>
-          Toggle Show
+          Toggle Show Form
         </button>
-        {show && <div> Show </div>}
       </div>
-      <form action="" method="get">
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            value={firstName}
-            placeholder="first name"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            value={lastName}
-            placeholder="first name"
-            onChange={handleChange}
-          />
-        </div>
+      {show && (
+        <form action="" method="get">
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control"
+              value={firstName}
+              placeholder="first name"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control"
+              value={lastName}
+              placeholder="last name"
+              onChange={handleChange}
+            />
+          </div>
 
-        <div className="form-group">
-          <input
-            type="text"
-            name="email"
-            className="form-control"
-            placeholder="Email"
-            value={email}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            name="password"
-            className="form-control"
-            placeholder="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </div>
-      </form>
+          <div className="form-group">
+            <input
+              type="text"
+              name="email"
+              className="form-control"
+              placeholder="Email"
+              value={email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              name="password"
+              className="form-control"
+              placeholder="password"
+              value={password}
+              onChange={handleChange}
+            />
+          </div>
+        </form>
+      )}
     </div>
   );
 };

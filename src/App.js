@@ -4,6 +4,7 @@ import "./App.css";
 import { UseStateExample } from "./components/useState/UseStateExample";
 import { FormHook } from "./components/Form";
 import { UseEffectExample } from "./components/useEffect/UseEffectExample";
+import { FetchApiExample } from "./components/FetchApi/FetachApiExample";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <div className="alert">
           {/* <UseStateExample></UseStateExample> */}
           {/* <FormHook /> */}
-          <UseEffectExample />
+          {/* <UseEffectExample /> */}
+          <FetchApiExample />
         </div>
       </div>
     </>

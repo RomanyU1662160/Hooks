@@ -11,7 +11,17 @@ export const FetchApiExample = () => {
   return (
     <div>
       <p> Fetch Api example</p>
-      {loading ? " ...loading" : data.id}
+      {loading ? (
+        <>
+          <div class="spinner-border text-info" role="status">
+            <div class="spinner-grow text-info" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        </>
+      ) : (
+        data.id
+      )}
     </div>
   );
 };
